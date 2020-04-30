@@ -1,8 +1,9 @@
-.PHONY: init
-init:
-	test -d _venv || python3 -m venv _venv
+# pi-cfd-cluster
+################
+# Modular Make - top level Makefile
+PROJPATH := $(PWD)
+PROJNAME := $(notdir $(PROJPATH))
+MK := mk
 
-.PHONY: reqs
-reqs:
-	pip install -r requirements.txt
+include $(MK)/os-detect.mk
 

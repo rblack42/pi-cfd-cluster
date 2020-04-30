@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pi CFD Cluster &mdash; pi-cfd-cluster 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Py CFD Cluster" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pi-cfd-cluster
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Pi CFD Cluster</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pi-cfd-cluster</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Pi CFD Cluster</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/introduction/01-introduction.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pi-cfd-cluster">
+<h1>Pi CFD Cluster<a class="headerlink" href="#pi-cfd-cluster" title="Permalink to this headline">¶</a></h1>
+<p>I m an Aerospace Engineer and a Computer Scientist. I have spent almost 40
+years working professionally in those fields, and have recently retired (for
+the second time!)</p>
+<p>Back in 1975, I wrote a FORTRAAM program that solved the equations of motion for air flowing over an ogive-cylinder projectile traveling a zero angle of attack at Mach 6. At the time, the solution was pretty unique, and it ran in about 10 minutes on a state-of-the-art CDC 6600 mainfrme competer. I even managed to get the code running on an early desktop programmable calculater, but the run-time was measured in many hours.</p>
+<p>Then n 2003, I rewrote the progrma in Python as art of a class in object-oriented design i=I took while working on a MAster’s degree in COMputer Science at Texas State UNiversty. I was pretty amazed to find that the old code ran in under 10 seconds. Quite an improvement.</p>
+<p>Then, in January of 2020, I hd a chance to visit the Cheyenne Supercomputer in (naturally) Cheyenne, Wyoming. This amazing machine got me thinking baout exploring my old code on more modern hardware. Hower supercomputer time is hard to come by, but the basic architectural principles that make them insanely fast are approachable by student engineers, if they want to do something on a much smaller scale,</p>
+<p>Cheyenne is an amazing machine that has 145,000 Intel Xeon processof cores available to run problems. these cores are housed in several thousand cases, and all of them are networked together. Modern software lets engineers spread their computational work across all of this mchines.
+We can build our own baby supercomputer, using relatively inexpensive machines. I decided to build a machine suitable for performing learning experiments at home. The machine currently has eight Raspberry Pi 4 boards, each with four gigabytes of ram, all networked using a fast gigabit network switch.
+The program that will ultimately be used on this machine is documented elsewhee. In this note, we will explore setting this machine up in a very efficient way, and configuring the machine so it cna report what is going on internally for our experiments. All software used is freely available on all major platforms, however, these notes were produced initially on a Macbook Pro. Later work willverify that everything works on modern WIndows and lInux machines as well.</p>
+<p>The rtotal cost of this machine is not exacltly cheap, but it ia reasonable. I spread out the cost by buying the processor boards as I visited my local Microcenter, here in Kansas City. Here are the parts I am currently using:</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Py CFD Cluster" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Roie R. Black
+      <span class="lastupdated">
+        Last updated on Apr 29, 2020.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
